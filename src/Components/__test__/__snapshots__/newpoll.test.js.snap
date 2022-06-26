@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`newpoll component should render and match screenshot 1`] = `
+<div>
+  <div>
+    <form>
+      <input
+        name="optionOne"
+        placeholder="Option One"
+        type="text"
+      />
+      <br />
+      <input
+        name="optionTwo"
+        placeholder="Option Two"
+        type="text"
+      />
+      <br />
+      <button>
+        Add
+      </button>
+    </form>
+  </div>
+</div>
+`;

@@ -1,0 +1,107 @@
+.App {
+    text-align:center;
+    list-style: none;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+    list-style: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color:white;
+    min-height: 100vh;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+    background-color: green;
+    
+  }
+  
+ 
+  
+ .nav{
+   display: flex;
+   list-style: none;
+   padding: 10px 3px 10px 3px;
+   background-color: #FEC7FD;
+   border-radius: 10px;
+   margin-bottom: 10px;
+   margin-right: 10px;
+
+ }
+ .navNew{
+  padding: 10px 3px 10px 3px;
+  background-color: #FEC7FD;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+ }
+ .navHome{
+  padding: 10px 3px 10px 3px;
+  background-color: #FEC7FD;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+ }
+ .navL{
+  padding: 10px 3px 10px 3px;
+  background-color: #FEC7FD;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+ }
+ .option1{
+  padding: 10px 3px 10px 3px; 
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+ }
+ .option2{
+  padding: 10px 6px 40px 3px; 
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-right: 40px;
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+ }
+ .question{
+    background-color:#955251;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+ }
+ .btn{
+   font-size: 14px;
+   background-color: crimson;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+ .board{
+   background-color:#98B4D4 ;
+ }
+ .btnv{
+   background-color:#BC243C;
+ }
+ .btnb{
+   background-color:#009B77;
+ }

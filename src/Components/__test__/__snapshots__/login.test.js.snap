@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logincomponent should render and match screenshot 1`] = `
+<div>
+  <div>
+    <form
+      data-testid="loginForm"
+    >
+      <label>
+        Username:
+        <input
+          type="text"
+          value="sarahedo"
+        />
+        <br />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input
+          type="password"
+          value="password123"
+        />
+      </label>
+      <br />
+      <button>
+         Login 
+      </button>
+    </form>
+  </div>
+</div>
+`;
