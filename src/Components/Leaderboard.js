@@ -10,7 +10,7 @@ function Leaderboard({ leaderboard, fetchStat }) {
     fetchStat();
   }, [fetchStat]);
   return (
-    <div className="board">
+    <div className="loginForm">
       {leaderboard &&
         leaderboard.map((stat, idx) => (
           <div>
