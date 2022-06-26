@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getQuestion } from "../db";
 import { answerQuestion } from "../Store/questionReducer";
 import { connect } from "react-redux";
@@ -9,25 +9,30 @@ function QuestionPage({ answerQuestion, answers }) {
   const { question_id } = useParams();
   const [choice, setChoice] = useState(answers[question_id]);
   const [question, setQuestion] = useState(null);
+  const navigate = useNavigate();
+
   useEffect(() => {
     getQuestion(question_id).then((question) => {
       setQuestion(question);
     });
   }, [question_id]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     answerQuestion(question_id, choice);
+    navigate("/");
   };
 
   const handleChange = (e) => {
     setChoice(e.target.value);
   };
+
   return (
-    
     question && (
-      <div className="question">
+      <div className="optionsForm">
         <form onSubmit={handleSubmit}>
           <input
+            className="options"
             type="radio"
             name="options"
             id="optionOne"
@@ -39,6 +44,7 @@ function QuestionPage({ answerQuestion, answers }) {
           <br />
           <input
             type="radio"
+            className="options"
             name="options"
             id="optionTwo"
             value={"optionTwo"}
@@ -46,11 +52,8 @@ function QuestionPage({ answerQuestion, answers }) {
             checked={choice === "optionTwo"}
           />
           <label htmlFor="optionTwo">{question?.optionTwo?.text}</label> <br />
-          <button className="btnv">Vote</button>
+          <button className="btn">Vote</button>
         </form>
-        <Link to="/">
-          <button className="btnb">Back</button>
-        </Link>
       </div>
     )
   );

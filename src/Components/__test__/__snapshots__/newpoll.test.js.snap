@@ -3,20 +3,24 @@
 exports[`newpoll component should render and match screenshot 1`] = `
 <div>
   <div>
-    <form>
+    <form
+      class="newPollForm"
+    >
       <input
+        class="inputElement"
         name="optionOne"
         placeholder="Option One"
         type="text"
       />
-      <br />
       <input
+        class="inputElement"
         name="optionTwo"
         placeholder="Option Two"
         type="text"
       />
-      <br />
-      <button>
+      <button
+        class="btn"
+      >
         Add
       </button>
     </form>

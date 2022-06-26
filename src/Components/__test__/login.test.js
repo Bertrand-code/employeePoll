@@ -37,4 +37,8 @@ describe("Logincomponent", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("Login")).toBeInTheDocument();
   });
+  it("should render login button", () => {
+    render(<TestLogin />);
+    expect(screen.getByText("Login")).toBeInTheDocument();
+  });
 });

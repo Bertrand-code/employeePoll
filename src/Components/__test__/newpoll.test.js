@@ -37,7 +37,9 @@ describe("newpoll component", () => {
     render(<TestNewPoll />);
     const optionOne = screen.getByPlaceholderText("Option One");
     const optionTwo = screen.getByPlaceholderText("Option Two");
+    fireEvent.click(optionOne);
     fireEvent.change(optionOne, { target: { value: "option One" } });
+    fireEvent.click(optionTwo);
     fireEvent.change(optionTwo, { target: { value: "option Two" } });
     expect(optionOne.value).toBe("option One");
     expect(optionTwo.value).toBe("option Two");

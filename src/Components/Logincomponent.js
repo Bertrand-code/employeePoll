@@ -14,12 +14,25 @@ function Logincomponent({ login, user, auth }) {
   if (auth) return <Navigate to={"/"} replace />;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} data-testid="loginForm">
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100vh",
+      }}
+    >
+      <form
+        className="loginForm"
+        onSubmit={handleSubmit}
+        data-testid="loginForm"
+      >
         <label>
           Username:
           <input
             type="text"
+            className="inputElement"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -29,13 +42,14 @@ function Logincomponent({ login, user, auth }) {
         <label>
           Password:
           <input
+            className="inputElement"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <br />
-        <button> Login </button>
+        <button className="btn"> Login </button>
       </form>
       {JSON.stringify(user)}
     </div>

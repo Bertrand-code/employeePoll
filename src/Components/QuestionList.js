@@ -14,10 +14,11 @@ function QuestionList({ usersQuestions, userAnswers }) {
   }, []);
   return (
     data && (
-
-      <div style={{ height: "100vh" },{fontFamily:"Times New Roman"}, {fontSize:"12px"}, {backgroundColor:"#98B4D4 "}}>
-        <h1 style={{color:"crimson"},{fontSize:"30px"}}>Questions</h1>
-        <span style={{backgroundColor:"red"}}>{Que.current}</span>
+      <div id="questionList">
+        <div>
+          <h1>Questions</h1>
+          <span>Count {Que.current}</span>
+        </div>
         {data &&
           Object.keys(data).map((key) => {
             if (!userAnswers[key]) {
@@ -27,8 +28,10 @@ function QuestionList({ usersQuestions, userAnswers }) {
               return null;
             }
           })}
-        <h1 style={{color:"red"}, {fontSize:"30px"}}>Done</h1>
-        <span style={{backgroundColor:"crimson"}}>{doneQue.current}</span>
+        <div>
+          <h1>Done</h1>
+          <span>Count {doneQue.current}</span>
+        </div>
         {data &&
           Object.keys(data).map((key) => {
             if (userAnswers[key]) {

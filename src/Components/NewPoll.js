@@ -25,21 +25,22 @@ function NewPoll({ saveQuestion }) {
   };
 
   return (
-    <div className="App-link">
-      <form onSubmit={handleSubmit}>
-        <div className="option1"> <input
+    <div>
+      <form className="newPollForm" onSubmit={handleSubmit}>
+        <input
           type="text"
+          className="inputElement"
           placeholder="Option One"
           name="optionOne"
           onChange={handleChange}
         />
-        <br/></div>
-       <div className="option2">   <input
+        <input
+          className="inputElement"
           type="text"
           placeholder="Option Two"
           name="optionTwo"
           onChange={handleChange}
-        /></div>
+        />
         <button className="btn">Add</button>
       </form>
     </div>
