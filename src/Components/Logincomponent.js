@@ -10,6 +10,8 @@ function Logincomponent({ login, user, auth }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     login({ username, password });
+    Selection(username, password)
+  
   };
   if (auth) return <Navigate to={"/"} replace />;
 
