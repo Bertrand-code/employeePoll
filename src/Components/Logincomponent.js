@@ -12,13 +12,16 @@ function Logincomponent({ login, user, auth }) {
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
-  login(userName)
+  login({userName})
     
   };
   useEffect(() => {
     _getUsers().then((users) => {
       setUsers(users);
+       
+      
     })
+  
   },[users.length]);
 
   

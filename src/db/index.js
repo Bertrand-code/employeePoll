@@ -1,10 +1,10 @@
 import { _getQuestions, _getUsers, _saveQuestionAnswer } from "./_DATA";
 
-export function login(username, password) {
+export function login(username) {
   return new Promise((resolve, reject) => {
     _getUsers().then((users) => {
       const user = users[username];
-      if (user && user.password === password) {
+      if (user) {
         resolve(user);
       } else {
         reject(new Error("Invalid username or password"));
