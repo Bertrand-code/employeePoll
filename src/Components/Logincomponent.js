@@ -13,16 +13,10 @@ function Logincomponent({ login, user, auth }) {
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
-    <select name="user">
-    
-            {users?.map((option) => (
-              <option value={option.value}>{option.id}</option>
-            ))}
-          </select>
     login({ username, password });
-    
+    Selection(username, password)
   
-  };
+  };;
   useEffect(() => {
     _getUsers().then((users) => {
       setUsers(users);
