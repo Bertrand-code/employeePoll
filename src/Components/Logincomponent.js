@@ -13,14 +13,14 @@ function Logincomponent({ login, user, auth }) {
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
-    <select name="users">
+    <select name="user">
     
-            {users.map((option) => (
-              <option value={option.value}>{option.name}</option>
+            {users?.map((option) => (
+              <option value={option.value}>{option.id}</option>
             ))}
           </select>
     login({ username, password });
-    Selection(username, password)
+    
   
   };
   useEffect(() => {
@@ -29,6 +29,7 @@ function Logincomponent({ login, user, auth }) {
       
     })
   },[users.length]);
+  
 
   
 
