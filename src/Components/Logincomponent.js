@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { userLogin } from "../Store/authReducer";
 import { useEffect } from "react";
+import { _getUsers } from "../db/_DATA";
 
 
 function Logincomponent({ login, users, auth }) {
@@ -22,15 +23,15 @@ function Logincomponent({ login, users, auth }) {
   
   };
   useEffect(() => {
-    _getUsers().then((users)=>{
-      setUsername(users)
-      return ()=>{
-        setUsername(username);
-    if (users) {
-      Navigate('/');
-    }
-  }
-  },[users, Navigate])
+   _getUsers().then((users)=>{
+     setUsername(users);
+     return ()=>{
+       setUsername(username)
+     }
+   }),[users, Navigate];
+    
+  });
+
   
 
   return (
@@ -75,7 +76,7 @@ function Logincomponent({ login, users, auth }) {
     </div>
   );
 }
-  )
+  
 const mapDispatchToProps = {
   login: userLogin,
 };
@@ -83,4 +84,4 @@ const mapStateToProps = (state) => ({
   auth: state.authStore.auth,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Logincomponent)};
+export default connect(mapStateToProps, mapDispatchToProps)(Logincomponent);
