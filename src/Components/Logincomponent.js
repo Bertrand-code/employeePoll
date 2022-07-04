@@ -6,24 +6,23 @@ import { useEffect } from "react";
 import { _getUsers } from "../db/_DATA";
 
 
-function Logincomponent({ login, user, auth }) {
+function Logincomponent({ login, newUsers, auth }) {
   const [username, setUsername] = React.useState("sarahedo");
   const [password, setPassword] = React.useState("password123");
   const [users, setUsers] = React.useState([]);
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     login({ username, password });
     Selection(username, password)
   
-  };;
+  };
   useEffect(() => {
     _getUsers().then((users) => {
       setUsers(users);
-      
     })
   },[users.length]);
-  
 
   
 
@@ -44,28 +43,16 @@ function Logincomponent({ login, user, auth }) {
       >
         <label>
           Username:
-          <input
-            type="text"
-            className="inputElement"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+          <select name="username" onChange={(e) => e.target.value}>
+            {Object.values(users).map((option) => (
+              <option value={option.value}>{option.name}</option>
+            ))}
+          </select>
           <br />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            className="inputElement"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
         </label>
         <br />
         <button className="btn"> Login </button>
       </form>
-      {JSON.stringify(user)}
     </div>
   );
 }
