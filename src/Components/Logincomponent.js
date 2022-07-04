@@ -3,12 +3,18 @@ import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { userLogin } from "../Store/authReducer";
 
-function Logincomponent({ login, user, auth }) {
+function Logincomponent({ login, users, auth }) {
   const [username, setUsername] = React.useState("sarahedo");
   const [password, setPassword] = React.useState("password123");
-
+  console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
+    <select name="users">
+      console.log(users)
+            {users.map((option) => (
+              <option value={option.value}>{option.name}</option>
+            ))}
+          </select>
     login({ username, password });
     Selection(username, password)
   
@@ -53,7 +59,7 @@ function Logincomponent({ login, user, auth }) {
         <br />
         <button className="btn"> Login </button>
       </form>
-      {JSON.stringify(user)}
+      {JSON.stringify(users)}
     </div>
   );
 }
