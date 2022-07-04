@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { userLogin } from "../Store/authReducer";
+import { useEffect } from "react";
+
 
 function Logincomponent({ login, users, auth }) {
   const [username, setUsername] = React.useState("sarahedo");
@@ -19,7 +21,12 @@ function Logincomponent({ login, users, auth }) {
     Selection(username, password)
   
   };
-  if (auth) return <Navigate to={"/"} replace />;
+  useEffect(() => {
+    if (users.authedUser) {
+      Navigate('/');
+    }
+  }, [users.authedUser, Navigate]);
+  
 
   return (
     <div
