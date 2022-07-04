@@ -22,10 +22,10 @@ function Logincomponent({ login, users, auth }) {
   
   };
   useEffect(() => {
-    if (users.authedUser) {
+    if (users.auth) {
       Navigate('/');
     }
-  }, [users.authedUser, Navigate]);
+  }, [users.auth, Navigate]);
   
 
   return (
