@@ -22,6 +22,10 @@ function Logincomponent({ login, users, auth }) {
   
   };
   useEffect(() => {
+    _getUsers().then((users)=>{
+      setUsername(users)
+      return ()=>{
+        setUsername(username);
     if (users) {
       Navigate('/');
     }
