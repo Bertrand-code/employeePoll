@@ -7,11 +7,12 @@ import { _getUsers } from "../db/_DATA";
 
 
 function Logincomponent({ login, user, auth }) {
+  const[userName, setuserName]=React.useState("Sarahedo")
   const [users, setUsers] = React.useState([]);
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
-  login(users)
+  login(userName)
     
   };
   useEffect(() => {
