@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { _getUsers } from "../db/_DATA";
 
 
-function Logincomponent({ login, newUsers, auth }) {
+function Logincomponent({ login, user, auth }) {
   const [username, setUsername] = React.useState("sarahedo");
   const [password, setPassword] = React.useState("password123");
   const [users, setUsers] = React.useState([]);
@@ -15,9 +15,7 @@ function Logincomponent({ login, newUsers, auth }) {
     e.preventDefault();
     
     login({ username, password });
-    setUsername(username, password)
-    setPassword(password)
-  
+    
   };
   useEffect(() => {
     _getUsers().then((users) => {
@@ -44,9 +42,9 @@ function Logincomponent({ login, newUsers, auth }) {
       >
         <label>
           Username:
-          <select name="username" onChange={(e) => e.target.value}>
+          <select name="username" key={user} onChange={(e) => e.target.value}>
             {Object.values(users).map((option) => (
-              <option value={option.value}>{option.name}</option>
+              <option  value={option.value} key={option.id}>{option.name}</option>
             ))}
           </select>
           <br />
