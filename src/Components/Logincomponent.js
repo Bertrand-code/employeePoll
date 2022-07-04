@@ -22,10 +22,15 @@ function Logincomponent({ login, users, auth }) {
   
   };
   useEffect(() => {
+    _getUsers().then((users)=>{
+      setUsername(users)
+      return ()=>{
+        setUsername(username);
     if (users) {
       Navigate('/');
     }
-  }, [users, Navigate]);
+  }
+  },[users, Navigate])
   
 
   return (
@@ -70,7 +75,7 @@ function Logincomponent({ login, users, auth }) {
     </div>
   );
 }
-
+  )
 const mapDispatchToProps = {
   login: userLogin,
 };
@@ -78,4 +83,4 @@ const mapStateToProps = (state) => ({
   auth: state.authStore.auth,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Logincomponent);
+export default connect(mapStateToProps, mapDispatchToProps)(Logincomponent)};
