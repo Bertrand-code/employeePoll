@@ -6,7 +6,7 @@ const Auth = ({ auth }) => {
   return <Outlet />;
 };
 const mapStateToProps = (state) => ({
-  auth: state.authStore.auth,
+  auth: state.authStore.auth.id,
 });
 
 export default connect(mapStateToProps)(Auth);
