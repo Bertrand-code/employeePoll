@@ -1,14 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { connect } from "react-redux";
-import { _getUsers } from "../db/_DATA";
 
-const Auth = ({auth,id}) => {
+const Auth = ({ auth }) => {
   if (!auth) return <Navigate to="/login" replace />;
   return <Outlet />;
 };
 const mapStateToProps = (state) => ({
-  auth: state.authStore.auth,
-  id: state.authStore.id,
+  auth: state.authStore.auth.id,
 });
 
-export default connect(mapStateToProps)(Auth,id);
+export default connect(mapStateToProps)(Auth);

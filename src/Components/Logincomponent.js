@@ -15,7 +15,8 @@ function Logincomponent({ login, newUsers, auth }) {
     e.preventDefault();
     
     login({ username, password });
-    Selection(username, password)
+    setUsername(username, password)
+    setPassword(password)
   
   };
   useEffect(() => {
