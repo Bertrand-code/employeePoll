@@ -7,14 +7,11 @@ import { _getUsers } from "../db/_DATA";
 
 
 function Logincomponent({ login, user, auth }) {
-  const [username, setUsername] = React.useState("sarahedo");
-  const [password, setPassword] = React.useState("password123");
   const [users, setUsers] = React.useState([]);
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    login({ username, password });
+  
     
   };
   useEffect(() => {
@@ -44,7 +41,7 @@ function Logincomponent({ login, user, auth }) {
           Username:
           <select name="username" key={user} onChange={(e) => e.target.value}>
             {Object.values(users).map((option) => (
-              <option  value={option.value} key={option.id}>{option.name}</option>
+              <option  value={option.value} key={option.id}>{option.id}</option>
             ))}
           </select>
           <br />
