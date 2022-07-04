@@ -11,7 +11,7 @@ function Logincomponent({ login, user, auth }) {
   console.log(users)
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+  login(users)
     
   };
   useEffect(() => {
